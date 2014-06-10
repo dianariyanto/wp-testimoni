@@ -12,21 +12,21 @@ License URI: License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 //Initialize the metabox class
 
-function grvs_initialize_cmb_meta_boxes() {
+function ngrmb_initialize_cmb_meta_boxes() {
 	if ( ! class_exists( 'cmb_Meta_Box' ) )
 		require_once(plugin_dir_path( __FILE__ ) . 'init.php');
 }
 
-add_action( 'init', 'grvs_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'ngrmb_initialize_cmb_meta_boxes', 9999 );
 
 //Add Meta Boxes
 
-function grvs_sample_metaboxes( $meta_boxes ) {
-	$prefix = '_grvs_'; // Prefix for all fields
+function ngrmb_sample_metaboxes( $meta_boxes ) {
+	$prefix = '_ngrmb_'; // Prefix for all fields
 
 	$meta_boxes[] = array(
 		'id' => 'test_metabox',
-		'title' => 'Gravis Extra Fields',
+		'title' => 'Info Pengirim Testimoni',
 		'pages' => array('testimonial'), // post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -55,7 +55,7 @@ function grvs_sample_metaboxes( $meta_boxes ) {
 
 	return $meta_boxes;
 }
-add_filter( 'cmb_meta_boxes', 'grvs_sample_metaboxes' );
+add_filter( 'cmb_meta_boxes', 'ngrmb_sample_metaboxes' );
 
 // Register Custom Post Type
 function testimonial() {
